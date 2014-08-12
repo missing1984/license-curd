@@ -17,7 +17,9 @@ define([ 'jquery', 'underscore', 'backbone', './editview'], function($, _, Backb
             this.listenTo(this.model, 'destroy', this.remove);
         },
         render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
+            var json_model = this.model.toJSON();
+            json_model["clazz"] = json_model["class"];
+            this.$el.html(this.template(_.omit(json_model, "class")));
             return this;
         },
         del: function(e) {

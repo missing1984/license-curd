@@ -17,13 +17,11 @@ define(['../models/license', 'jquery', 'underscore', 'backbone'], function(Licen
                 this.email.val('');
                 this.sn.val('');
                 this.user.val('');
-                this.class.val('');
             }
             else {
                 this.email.val(this.model.get('email'));
                 this.sn.val(this.model.get('sn'));
                 this.user.val(this.model.get('user'));
-                this.class.val(this.model.get('class'));
             }
         },
         saveModel: function() {
